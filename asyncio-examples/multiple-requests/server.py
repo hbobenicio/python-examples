@@ -11,9 +11,6 @@ switch the execution context to other coroutines.
 import asyncio
 from aiohttp import web
 
-async def index_handler(request):
-    return web.Response(text = 'Hello, aiohttp!')
-
 async def list_users_handler(request):
     await asyncio.sleep(3)
     return web.json_response(
@@ -24,7 +21,6 @@ if __name__ == '__main__':
     app = web.Application()
 
     app.add_routes([
-        web.get('/', index_handler),
         web.get('/users', list_users_handler)
     ])
 
