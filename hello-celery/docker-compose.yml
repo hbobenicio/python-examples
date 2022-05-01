@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  # https://hub.docker.com/_/rabbitmq
+  rabbitmq:
+    image: rabbitmq:3.8.14-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: hellocelery
+      RABBITMQ_DEFAULT_PASS: hellocelery
+#    volumes:
+#      - './infra/rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro'
